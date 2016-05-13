@@ -1,0 +1,5 @@
+# depslib dependency file v1.0
+1459781290 source:/home/pi/projects/ML/_codeblocks/CML/main.c
+	<stdio.h>
+	<stdlib.h>
+

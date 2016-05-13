@@ -1,0 +1,372 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6" />
+	<Project>
+		<Option title="darknet" />
+		<Option pch_mode="2" />
+		<Option compiler="gcc" />
+		<Build>
+			<Target title="Debug">
+				<Option output="bin/Debug/darknet" prefix_auto="1" extension_auto="1" />
+				<Option object_output="obj/Debug/" />
+				<Option type="1" />
+				<Option compiler="gcc" />
+				<Option parameters="rnn train ../../darknet/cfg/rnn.train.cfg -file ../../darknet/data/shortnames.txt" />
+				<Compiler>
+					<Add option="-g" />
+				</Compiler>
+				<Linker>
+					<Add library="stdc++" />
+					<Add library="m" />
+					<Add library="pthread" />
+				</Linker>
+			</Target>
+			<Target title="Release">
+				<Option output="bin/Release/darknet" prefix_auto="1" extension_auto="1" />
+				<Option object_output="obj/Release/" />
+				<Option type="1" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add option="-O2" />
+				</Compiler>
+				<Linker>
+					<Add option="-s" />
+					<Add library="stdc++" />
+					<Add library="m" />
+					<Add library="pthread" />
+				</Linker>
+			</Target>
+		</Build>
+		<Compiler>
+			<Add option="-Wall" />
+		</Compiler>
+		<Unit filename="../../darknet/LICENSE" />
+		<Unit filename="../../darknet/Makefile" />
+		<Unit filename="../../darknet/README.md" />
+		<Unit filename="../../darknet/cfg/alexnet.cfg" />
+		<Unit filename="../../darknet/cfg/cifar.cfg" />
+		<Unit filename="../../darknet/cfg/cifar.test.cfg" />
+		<Unit filename="../../darknet/cfg/darknet.cfg" />
+		<Unit filename="../../darknet/cfg/extraction.cfg" />
+		<Unit filename="../../darknet/cfg/extraction.conv.cfg" />
+		<Unit filename="../../darknet/cfg/go.test.cfg" />
+		<Unit filename="../../darknet/cfg/jnet-conv.cfg" />
+		<Unit filename="../../darknet/cfg/msr_152.cfg" />
+		<Unit filename="../../darknet/cfg/msr_34.cfg" />
+		<Unit filename="../../darknet/cfg/msr_50.cfg" />
+		<Unit filename="../../darknet/cfg/rnn.cfg" />
+		<Unit filename="../../darknet/cfg/rnn.train.cfg" />
+		<Unit filename="../../darknet/cfg/rnn.train.cfg.old" />
+		<Unit filename="../../darknet/cfg/strided.cfg" />
+		<Unit filename="../../darknet/cfg/vgg-16.cfg" />
+		<Unit filename="../../darknet/cfg/vgg-conv.cfg" />
+		<Unit filename="../../darknet/cfg/writing.cfg" />
+		<Unit filename="../../darknet/cfg/yolo-coco.cfg" />
+		<Unit filename="../../darknet/cfg/yolo-small.cfg" />
+		<Unit filename="../../darknet/cfg/yolo-tiny.cfg" />
+		<Unit filename="../../darknet/cfg/yolo.cfg" />
+		<Unit filename="../../darknet/data/dog.jpg" />
+		<Unit filename="../../darknet/data/eagle.jpg" />
+		<Unit filename="../../darknet/data/horses.jpg" />
+		<Unit filename="../../darknet/data/inet.labels.list" />
+		<Unit filename="../../darknet/data/labels/aeroplane.png" />
+		<Unit filename="../../darknet/data/labels/airplane.png" />
+		<Unit filename="../../darknet/data/labels/apple.png" />
+		<Unit filename="../../darknet/data/labels/backpack.png" />
+		<Unit filename="../../darknet/data/labels/banana.png" />
+		<Unit filename="../../darknet/data/labels/baseball bat.png" />
+		<Unit filename="../../darknet/data/labels/baseball glove.png" />
+		<Unit filename="../../darknet/data/labels/bear.png" />
+		<Unit filename="../../darknet/data/labels/bed.png" />
+		<Unit filename="../../darknet/data/labels/bench.png" />
+		<Unit filename="../../darknet/data/labels/bicycle.png" />
+		<Unit filename="../../darknet/data/labels/bird.png" />
+		<Unit filename="../../darknet/data/labels/boat.png" />
+		<Unit filename="../../darknet/data/labels/book.png" />
+		<Unit filename="../../darknet/data/labels/bottle.png" />
+		<Unit filename="../../darknet/data/labels/bowl.png" />
+		<Unit filename="../../darknet/data/labels/broccoli.png" />
+		<Unit filename="../../darknet/data/labels/bus.png" />
+		<Unit filename="../../darknet/data/labels/cake.png" />
+		<Unit filename="../../darknet/data/labels/car.png" />
+		<Unit filename="../../darknet/data/labels/carrot.png" />
+		<Unit filename="../../darknet/data/labels/cat.png" />
+		<Unit filename="../../darknet/data/labels/cell phone.png" />
+		<Unit filename="../../darknet/data/labels/chair.png" />
+		<Unit filename="../../darknet/data/labels/clock.png" />
+		<Unit filename="../../darknet/data/labels/couch.png" />
+		<Unit filename="../../darknet/data/labels/cow.png" />
+		<Unit filename="../../darknet/data/labels/cup.png" />
+		<Unit filename="../../darknet/data/labels/dining table.png" />
+		<Unit filename="../../darknet/data/labels/diningtable.png" />
+		<Unit filename="../../darknet/data/labels/dog.png" />
+		<Unit filename="../../darknet/data/labels/donut.png" />
+		<Unit filename="../../darknet/data/labels/elephant.png" />
+		<Unit filename="../../darknet/data/labels/fire hydrant.png" />
+		<Unit filename="../../darknet/data/labels/fork.png" />
+		<Unit filename="../../darknet/data/labels/frisbee.png" />
+		<Unit filename="../../darknet/data/labels/giraffe.png" />
+		<Unit filename="../../darknet/data/labels/hair drier.png" />
+		<Unit filename="../../darknet/data/labels/handbag.png" />
+		<Unit filename="../../darknet/data/labels/horse.png" />
+		<Unit filename="../../darknet/data/labels/hot dog.png" />
+		<Unit filename="../../darknet/data/labels/keyboard.png" />
+		<Unit filename="../../darknet/data/labels/kite.png" />
+		<Unit filename="../../darknet/data/labels/knife.png" />
+		<Unit filename="../../darknet/data/labels/laptop.png" />
+		<Unit filename="../../darknet/data/labels/make_labels.py" />
+		<Unit filename="../../darknet/data/labels/microwave.png" />
+		<Unit filename="../../darknet/data/labels/motorbike.png" />
+		<Unit filename="../../darknet/data/labels/motorcycle.png" />
+		<Unit filename="../../darknet/data/labels/mouse.png" />
+		<Unit filename="../../darknet/data/labels/orange.png" />
+		<Unit filename="../../darknet/data/labels/oven.png" />
+		<Unit filename="../../darknet/data/labels/parking meter.png" />
+		<Unit filename="../../darknet/data/labels/person.png" />
+		<Unit filename="../../darknet/data/labels/pizza.png" />
+		<Unit filename="../../darknet/data/labels/potted plant.png" />
+		<Unit filename="../../darknet/data/labels/pottedplant.png" />
+		<Unit filename="../../darknet/data/labels/refrigerator.png" />
+		<Unit filename="../../darknet/data/labels/remote.png" />
+		<Unit filename="../../darknet/data/labels/sandwich.png" />
+		<Unit filename="../../darknet/data/labels/scissors.png" />
+		<Unit filename="../../darknet/data/labels/sheep.png" />
+		<Unit filename="../../darknet/data/labels/sink.png" />
+		<Unit filename="../../darknet/data/labels/skateboard.png" />
+		<Unit filename="../../darknet/data/labels/skis.png" />
+		<Unit filename="../../darknet/data/labels/snowboard.png" />
+		<Unit filename="../../darknet/data/labels/sofa.png" />
+		<Unit filename="../../darknet/data/labels/spoon.png" />
+		<Unit filename="../../darknet/data/labels/sports ball.png" />
+		<Unit filename="../../darknet/data/labels/stop sign.png" />
+		<Unit filename="../../darknet/data/labels/suitcase.png" />
+		<Unit filename="../../darknet/data/labels/surfboard.png" />
+		<Unit filename="../../darknet/data/labels/teddy bear.png" />
+		<Unit filename="../../darknet/data/labels/tennis racket.png" />
+		<Unit filename="../../darknet/data/labels/tie.png" />
+		<Unit filename="../../darknet/data/labels/toaster.png" />
+		<Unit filename="../../darknet/data/labels/toilet.png" />
+		<Unit filename="../../darknet/data/labels/toothbrush.png" />
+		<Unit filename="../../darknet/data/labels/traffic light.png" />
+		<Unit filename="../../darknet/data/labels/train.png" />
+		<Unit filename="../../darknet/data/labels/truck.png" />
+		<Unit filename="../../darknet/data/labels/tv.png" />
+		<Unit filename="../../darknet/data/labels/tvmonitor.png" />
+		<Unit filename="../../darknet/data/labels/umbrella.png" />
+		<Unit filename="../../darknet/data/labels/vase.png" />
+		<Unit filename="../../darknet/data/labels/wine glass.png" />
+		<Unit filename="../../darknet/data/labels/zebra.png" />
+		<Unit filename="../../darknet/data/person.jpg" />
+		<Unit filename="../../darknet/data/scream.jpg" />
+		<Unit filename="../../darknet/data/shortnames.txt" />
+		<Unit filename="../../darknet/scripts/dice_label.sh" />
+		<Unit filename="../../darknet/scripts/imagenet_label.sh" />
+		<Unit filename="../../darknet/scripts/voc_label.py" />
+		<Unit filename="../../darknet/src/activation_kernels.cu" />
+		<Unit filename="../../darknet/src/activation_layer.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../darknet/src/activation_layer.h" />
+		<Unit filename="../../darknet/src/activations.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../darknet/src/activations.h" />
+		<Unit filename="../../darknet/src/avgpool_layer.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../darknet/src/avgpool_layer.h" />
+		<Unit filename="../../darknet/src/avgpool_layer_kernels.cu" />
+		<Unit filename="../../darknet/src/blas.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../darknet/src/blas.h" />
+		<Unit filename="../../darknet/src/blas_kernels.cu" />
+		<Unit filename="../../darknet/src/box.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../darknet/src/box.h" />
+		<Unit filename="../../darknet/src/captcha.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../darknet/src/cifar.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../darknet/src/classifier.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../darknet/src/coco.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../darknet/src/coco_demo.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../darknet/src/col2im.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../darknet/src/col2im.h" />
+		<Unit filename="../../darknet/src/col2im_kernels.cu" />
+		<Unit filename="../../darknet/src/compare.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../darknet/src/connected_layer.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../darknet/src/connected_layer.h" />
+		<Unit filename="../../darknet/src/convolutional_kernels.cu" />
+		<Unit filename="../../darknet/src/convolutional_layer.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../darknet/src/convolutional_layer.h" />
+		<Unit filename="../../darknet/src/cost_layer.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../darknet/src/cost_layer.h" />
+		<Unit filename="../../darknet/src/crnn_layer.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../darknet/src/crnn_layer.h" />
+		<Unit filename="../../darknet/src/crop_layer.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../darknet/src/crop_layer.h" />
+		<Unit filename="../../darknet/src/crop_layer_kernels.cu" />
+		<Unit filename="../../darknet/src/cuda.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../darknet/src/cuda.h" />
+		<Unit filename="../../darknet/src/darknet.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../darknet/src/data.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../darknet/src/data.h" />
+		<Unit filename="../../darknet/src/deconvolutional_kernels.cu" />
+		<Unit filename="../../darknet/src/deconvolutional_layer.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../darknet/src/deconvolutional_layer.h" />
+		<Unit filename="../../darknet/src/detection_layer.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../darknet/src/detection_layer.h" />
+		<Unit filename="../../darknet/src/dice.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../darknet/src/dropout_layer.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../darknet/src/dropout_layer.h" />
+		<Unit filename="../../darknet/src/dropout_layer_kernels.cu" />
+		<Unit filename="../../darknet/src/gemm.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../darknet/src/gemm.h" />
+		<Unit filename="../../darknet/src/go.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../darknet/src/im2col.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../darknet/src/im2col.h" />
+		<Unit filename="../../darknet/src/im2col_kernels.cu" />
+		<Unit filename="../../darknet/src/image.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../darknet/src/image.h" />
+		<Unit filename="../../darknet/src/imagenet.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../darknet/src/layer.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../darknet/src/layer.h" />
+		<Unit filename="../../darknet/src/list.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../darknet/src/list.h" />
+		<Unit filename="../../darknet/src/local_layer.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../darknet/src/local_layer.h" />
+		<Unit filename="../../darknet/src/matrix.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../darknet/src/matrix.h" />
+		<Unit filename="../../darknet/src/maxpool_layer.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../darknet/src/maxpool_layer.h" />
+		<Unit filename="../../darknet/src/maxpool_layer_kernels.cu" />
+		<Unit filename="../../darknet/src/network.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../darknet/src/network.h" />
+		<Unit filename="../../darknet/src/network_kernels.cu" />
+		<Unit filename="../../darknet/src/nightmare.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../darknet/src/normalization_layer.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../darknet/src/normalization_layer.h" />
+		<Unit filename="../../darknet/src/option_list.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../darknet/src/option_list.h" />
+		<Unit filename="../../darknet/src/parser.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../darknet/src/parser.h" />
+		<Unit filename="../../darknet/src/rnn.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../darknet/src/rnn_layer.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../darknet/src/rnn_layer.h" />
+		<Unit filename="../../darknet/src/rnn_vid.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../darknet/src/route_layer.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../darknet/src/route_layer.h" />
+		<Unit filename="../../darknet/src/server.h" />
+		<Unit filename="../../darknet/src/shortcut_layer.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../darknet/src/shortcut_layer.h" />
+		<Unit filename="../../darknet/src/softmax_layer.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../darknet/src/softmax_layer.h" />
+		<Unit filename="../../darknet/src/softmax_layer_kernels.cu" />
+		<Unit filename="../../darknet/src/stb_image.h" />
+		<Unit filename="../../darknet/src/stb_image_write.h" />
+		<Unit filename="../../darknet/src/swag.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../darknet/src/tag.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../darknet/src/utils.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../darknet/src/utils.h" />
+		<Unit filename="../../darknet/src/writing.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../darknet/src/yolo.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../darknet/src/yolo_demo.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../darknet/src/yolo_kernels.cu" />
+		<Extensions>
+			<code_completion />
+			<debugger />
+		</Extensions>
+	</Project>
+</CodeBlocks_project_file>

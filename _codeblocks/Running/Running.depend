@@ -1,0 +1,13 @@
+# depslib dependency file v1.0
+1462192075 source:/home/pi/projects/ML/_codeblocks/Running/main.c
+	<stdio.h>
+	<unistd.h>
+	<sysexits.h>
+	<fcntl.h>
+	<errno.h>
+	<string.h>
+	<stdlib.h>
+	<sys/types.h>
+	<math.h>
+	<arpa/inet.h>
+
