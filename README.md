@@ -17,9 +17,9 @@ kernel_bz_btree.tar.gz: 자료구조 알고리즘 B+Tree 소스
 소스를 압축해제 하면 다음과 같은 경로에 소스들이 있습니다.
 
 소스경로:
-
 CML: 제6장에 있는 소스들
-
 CML_NN_mnist: 제7장에 있는 소스들
-
 CML/Face: 제8장에 있는 소스들
+
+책소개 링크:
+http://www.kernel.bz/product/book10_ml2
