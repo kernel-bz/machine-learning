@@ -2,5 +2,8 @@
 <CodeBlocks_workspace_file>
 	<Workspace title="ML.Workspace">
 		<Project filename="TensorFlow/TensorFlow.cbp" />
+		<Project filename="CML/CML.cbp" />
+		<Project filename="CML_NN_mnist/CML_NN_mnist.cbp" />
+		<Project filename="Running/Running.cbp" />
 	</Workspace>
 </CodeBlocks_workspace_file>

@@ -31,6 +31,13 @@
 		<Compiler>
 			<Add option="-Wall" />
 		</Compiler>
+		<Unit filename="../../Lecture/Basic/basic00.py" />
+		<Unit filename="../../Lecture/Basic/basic01.py" />
+		<Unit filename="../../Lecture/Basic/basic01.result" />
+		<Unit filename="../../Lecture/Basic/basic02.py" />
+		<Unit filename="../../Lecture/Basic/basic02.result" />
+		<Unit filename="../../Lecture/Basic/basic03.py" />
+		<Unit filename="../../Lecture/Basic/tf_reshape.py" />
 		<Unit filename="../../Lecture/CNN/cnn_adam_opt.py" />
 		<Unit filename="../../Lecture/CNN/cnn_adam_opt.result" />
 		<Unit filename="../../Lecture/CNN/cnn_rms_opt.py" />
@@ -60,9 +67,11 @@
 		<Unit filename="../../Lecture/Linear/train.txt" />
 		<Unit filename="../../Lecture/LogClass/log_class.py" />
 		<Unit filename="../../Lecture/LogClass/log_class.result" />
+		<Unit filename="../../Lecture/LogClass/log_class_test.py" />
 		<Unit filename="../../Lecture/LogClass/train.txt" />
 		<Unit filename="../../Lecture/MultiClass/multi_class.py" />
 		<Unit filename="../../Lecture/MultiClass/multi_class.result" />
+		<Unit filename="../../Lecture/MultiClass/multi_class_test.py" />
 		<Unit filename="../../Lecture/MultiClass/train.txt" />
 		<Unit filename="../../Lecture/NN/alexnet.py" />
 		<Unit filename="../../Lecture/NN/alexnet.result" />
@@ -80,6 +89,7 @@
 		<Unit filename="../../Lecture/NN/mnist_logistic.result" />
 		<Unit filename="../../Lecture/NN/mnist_nn_deep_dropout.py" />
 		<Unit filename="../../Lecture/NN/mnist_nn_deep_dropout.result" />
+		<Unit filename="../../Lecture/NN/mnist_nn_deep_dropout_.py" />
 		<Unit filename="../../Lecture/NN/mnist_nn_init.py" />
 		<Unit filename="../../Lecture/NN/mnist_nn_init.result" />
 		<Unit filename="../../Lecture/NN/mnist_nn_relu.py" />
@@ -92,20 +102,19 @@
 		<Unit filename="../../Lecture/NN/recurrent_network.py" />
 		<Unit filename="../../Lecture/XOR/xor.py" />
 		<Unit filename="../../Lecture/XOR/xor.result" />
+		<Unit filename="../../Lecture/XOR/xor_.py" />
 		<Unit filename="../../Lecture/XOR/xor_nn.py" />
 		<Unit filename="../../Lecture/XOR/xor_nn.result" />
+		<Unit filename="../../Lecture/XOR/xor_nn_.py" />
 		<Unit filename="../../Lecture/XOR/xor_nn_deep.py" />
 		<Unit filename="../../Lecture/XOR/xor_nn_deep.result" />
 		<Unit filename="../../Lecture/XOR/xor_nn_deep2.py" />
 		<Unit filename="../../Lecture/XOR/xor_nn_deep2.result" />
+		<Unit filename="../../Lecture/XOR/xor_nn_deep3.py" />
+		<Unit filename="../../Lecture/XOR/xor_nn_deep_.py" />
 		<Unit filename="../../Lecture/XOR/xor_nn_relu.py" />
 		<Unit filename="../../Lecture/XOR/xor_nn_relu.result" />
 		<Unit filename="../../Lecture/XOR/xor_train.txt" />
-		<Unit filename="../../py/basic00.py" />
-		<Unit filename="../../py/basic01.py" />
-		<Unit filename="../../py/basic01.result" />
-		<Unit filename="../../py/basic02.py" />
-		<Unit filename="../../py/basic02.result" />
 		<Unit filename="../../tensorflow/TensorFlow-Examples-master/LICENSE" />
 		<Unit filename="../../tensorflow/TensorFlow-Examples-master/README.md" />
 		<Unit filename="../../tensorflow/TensorFlow-Examples-master/Setup_TensorFlow.md" />
@@ -145,6 +154,7 @@
 		<Extensions>
 			<code_completion />
 			<debugger />
+			<envvars />
 		</Extensions>
 	</Project>
 </CodeBlocks_project_file>

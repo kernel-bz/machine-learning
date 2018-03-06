@@ -11,10 +11,13 @@
 				<Option object_output="obj/Debug/" />
 				<Option type="1" />
 				<Option compiler="gcc" />
+				<Option parameters="learn" />
 				<Compiler>
 					<Add option="-g" />
-					<Add option="-std=c99" />
 				</Compiler>
+				<Linker>
+					<Add directory="../../../../../MinGW/mingw64/x86_64-w64-mingw32/lib" />
+				</Linker>
 			</Target>
 			<Target title="Release">
 				<Option output="bin/Release/Running" prefix_auto="1" extension_auto="1" />
@@ -37,6 +40,7 @@
 		</Unit>
 		<Extensions>
 			<code_completion />
+			<envvars />
 			<debugger />
 		</Extensions>
 	</Project>

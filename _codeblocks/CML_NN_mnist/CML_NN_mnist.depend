@@ -1,0 +1,46 @@
+# depslib dependency file v1.0
+1499653963 source:c:\dev\70_academy\50ml\cml_nn_mnist\img_mnist.c
+	<stdio.h>
+	<unistd.h>
+	<fcntl.h>
+	<errno.h>
+	<string.h>
+	<stdlib.h>
+	<sys/types.h>
+	<math.h>
+	"usr_types.h"
+	"img_mnist.h"
+	"nn.h"
+
+1464821328 c:\dev\70_academy\50ml\cml_nn_mnist\usr_types.h
+	<stdio.h>
+
+1499651667 c:\dev\70_academy\50ml\cml_nn_mnist\img_mnist.h
+	"usr_types.h"
+
+1499657340 c:\dev\70_academy\50ml\cml_nn_mnist\nn.h
+
+1499657493 source:c:\dev\70_academy\50ml\cml_nn_mnist\main.c
+	<stdio.h>
+	<unistd.h>
+	<fcntl.h>
+	<errno.h>
+	<string.h>
+	<stdlib.h>
+	<math.h>
+	<dirent.h>
+	<sys/types.h>
+	"usr_types.h"
+	"img_mnist.h"
+	"nn.h"
+
+1499657567 source:c:\dev\70_academy\50ml\cml_nn_mnist\nn.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<math.h>
+	<fcntl.h>
+	<sys/types.h>
+	<sys/stat.h>
+	<unistd.h>
+

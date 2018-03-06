@@ -1,234 +1,229 @@
-//Created by Paul at Existor Ltd as part of a neural networks tutorial 1/9/2015
-//See http://www.existor.com/en/news-neural-networks.html
+/**
+ *  file name:  multinomial.c
+ *  function:   Multinomial(Softmax) Classification for Machine Learning
+ *  author:     JungJaeJoon(rgbi3307@nate.com) on the www.kernel.bz
+ */
 
-//Libraries needed
-#include <stdio.h> //for printf
-#include <stdlib.h> //for rand
-#include <string.h> //for memcpy
-#include <math.h> //for tanh
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include <math.h>
 
-//Number of training examples and nodes in each layer. Easier to define as compiler constants here
-//than dynamically allocating memory at run-time.
-#define NUM_TRAINING    6
-#define NUM_INPUTS      3
-#define NUM_HIDDEN      4
-#define NUM_OUTPUTS     3
+typedef unsigned int    u32;
+typedef int             i32;
+typedef float           f32;
+typedef double          d64;
 
-int debug = 1; //0 for now debugging, 1 for the loss each iteration, 2 for all vectors/matrices each iteration
+#define ARRAY_CNT(a)    sizeof(a) / sizeof(a[0])
 
-//Print out the weights of a vector of matrix. The vector/matrix is passed to this function as if it
-//were a 1-dimensional array rather than 2 dimensions. In C, all the values are in one continuous
-//block of memory so it doesn't really matter if we index it as a 1 or 2 dimensional array. But if
-//we passed in 2 dimensional arrays, we'd need a different function for every possible 2D size.
-static void displayVectorOrMatrix (const char *label, float *m, int rows, int cols)
+///matrix count
+#define MATC    3
+#define LEARNING_RATE 0.01
+
+static inline f32 tahnh(f32 h)
 {
-    int i;
-
-	printf ("   %s:\n", label);
-	for (i=0; i<rows*cols; i++)
-        printf ("%10.5f%c", m[i], (cols>1 && i%cols==cols-1) ? '\n' : ' ');
-	if (cols==1) printf ("\n");
+    return (exp(h) - exp(-h)) / (exp(h) + exp(-h));
 }
 
-static void nn_learning(float *x, float *y, float (*Wxh)[NUM_HIDDEN], float (*Why)[NUM_OUTPUTS], float learningrate)
+///hypothesis: h = w1*x1 + w2*x2 + w3*x3 ... + wn*xn
+static inline f32 hypothesis(f32 *w, f32 *x, u32 n)
 {
-	float zhWeightedSums[NUM_HIDDEN]; //weighted sums for the hidden nodes
-	float zyWeightedSums[NUM_OUTPUTS]; //weighted sums for the output nodes
-	float probabilities[NUM_OUTPUTS]; //activation values of the output nodes
+    u32 i;
+    f32 h = 0.0;
 
-	float hActivationValues[NUM_HIDDEN+1]; //activation values of the hidden nodes, including one extra for the bias
-	float outputErrors[NUM_OUTPUTS]; //error in the output
-
-	float deltaWxh[NUM_INPUTS+1][NUM_HIDDEN]; //adjustments to weights between inputs x and hidden nodes
-	float deltaWhy[NUM_HIDDEN+1][NUM_OUTPUTS]; //adjustments to weights between hidden nodes and output y
-
-	float loss, sum; //for storing the loss
-	int i, h, o; //looping variables for iterations, input nodes, hidden nodes, output nodes
-
-    ///Forward propagation ------------------------------------------------
-    //Start the forward pass by calculating the weighted sums and activation values for the hidden layer
-    memset (zhWeightedSums, 0, sizeof (zhWeightedSums)); //set all the weighted sums to zero
-    for (h=0; h<NUM_HIDDEN; h++)
-        for (i=0; i<NUM_INPUTS+1; i++)
-            zhWeightedSums[h] += x[i] * Wxh[i][h]; //multiply and sum inputs * weights
-    if (debug>=2) displayVectorOrMatrix ("input/hidden weights", (float*)Wxh, NUM_INPUTS+1, NUM_HIDDEN);
-    if (debug>=2) displayVectorOrMatrix ("hidden weighted sums", zhWeightedSums, NUM_HIDDEN, 1);
-
-    hActivationValues[0]=1; //set the bias for the first hidden node to 1
-    for (h=0; h<NUM_HIDDEN; h++)
-        hActivationValues[h+1] = tanh (zhWeightedSums[h]); //apply activation function on other hidden nodes
-    if (debug>=2) displayVectorOrMatrix ("hidden node activation values", hActivationValues, NUM_HIDDEN+1, 1);
-
-    memset (zyWeightedSums, 0, sizeof (zyWeightedSums)); //set all the weighted sums to zero
-    for (o=0; o<NUM_OUTPUTS; o++)
-        for (h=0; h<NUM_HIDDEN+1; h++)
-            zyWeightedSums[o] += hActivationValues[h] * Why[h][o]; //multiply and sum inputs * weights
-    if (debug>=2) displayVectorOrMatrix ("hidden/output weights", (float*)Why, NUM_HIDDEN+1, NUM_OUTPUTS);
-    if (debug>=2) displayVectorOrMatrix ("output weighted sums", zyWeightedSums, NUM_OUTPUTS, 1);
-
-    for (sum=0, o=0; o<NUM_OUTPUTS; o++) {
-        probabilities[o] = exp (zyWeightedSums[o]);
-        sum += probabilities[o];
-    } //compute exp(z) for softmax
-    for (o=0; o<NUM_OUTPUTS; o++) probabilities[o] /= sum; //apply softmax by dividing by the the sum all the exps
-    if (debug>=2) displayVectorOrMatrix ("softmax probabilities", probabilities, NUM_OUTPUTS, 1);
-
-    for (o=0; o<NUM_OUTPUTS; o++)
-        outputErrors[o] = probabilities[o] - y[o]; //the error for each output
-    if (debug>=2) displayVectorOrMatrix ("output error", outputErrors, NUM_OUTPUTS, 1);
-
-    for (loss=0, o=0; o<NUM_OUTPUTS; o++)
-        loss -= y[o] * log (probabilities[o]); //the loss
-
-    if (debug>=1) printf ("loss(cost): %10.5f\n", loss); //output the loss
-
-    /// Back propagation --------------------------------------------------
-    //Multiply h*e to get the adjustments to deltaWhy
-    for (h=0; h<NUM_HIDDEN+1; h++)
-        for (int o=0; o<NUM_OUTPUTS; o++)
-            deltaWhy[h][o] = hActivationValues[h] * outputErrors[o];
-    if (debug>=2) displayVectorOrMatrix ("hidden/output weights gradient", (float*)deltaWhy, NUM_HIDDEN+1, NUM_OUTPUTS);
-    //Backward propogate the errors and store in the hActivationValues vector
-    memset (hActivationValues, 0, sizeof (hActivationValues)); //set all the weighted sums to zero
-    for (h=1; h<NUM_HIDDEN+1; h++)
-        for (o=0; o<NUM_OUTPUTS; o++)
-            hActivationValues[h] += Why[h][o] * outputErrors[o]; //multiply and sum inputs * weights
-    if (debug>=2) displayVectorOrMatrix ("back propagated error values", hActivationValues, NUM_HIDDEN+1, 1);
-
-    for (h=0; h<NUM_HIDDEN; h++)
-        zhWeightedSums[h] = hActivationValues[h+1] * (1 - pow (tanh (zhWeightedSums[h]), 2)); //apply activation function gradient
-    if (debug>=2) displayVectorOrMatrix ("hidden weighted sums after gradient", zhWeightedSums, NUM_HIDDEN, 1);
-
-    //Multiply x*eh*zh to get the adjustments to deltaWxh, this does not include the bias node
-    for (int i=0; i<NUM_INPUTS+1; i++)
-        for (int h=0; h<NUM_HIDDEN; h++)
-            deltaWxh[i][h] = x[i] * zhWeightedSums[h];
-    if (debug>=2) displayVectorOrMatrix ("input/hidden weights gradient", (float*)deltaWxh, NUM_INPUTS+1, NUM_HIDDEN);
-
-    /// Now add in the adjustments ----------------------------------------
-    for (int h=0; h<NUM_HIDDEN+1; h++)
-        for (int o=0; o<NUM_OUTPUTS; o++)
-            Why[h][o] -= learningrate * deltaWhy[h][o];
-
-    for (int i=0; i<NUM_INPUTS+1; i++)
-        for (int h=0; h<NUM_HIDDEN; h++)
-            Wxh[i][h] -= learningrate * deltaWxh[i][h];
+    for(i=0; i < n; i++)
+        h += w[i] * x[i];
+    ///return tahnh(h);
+    return h;
 }
 
-static void nn_answer(float *x, float *y, float (*Wxh)[NUM_HIDDEN], float (*Why)[NUM_OUTPUTS])
+static inline f32 softmax_sum(u32 n, f32 (*wm)[MATC], f32 *x)
 {
-	float zhWeightedSums[NUM_HIDDEN]; //weighted sums for the hidden nodes
-	float zyWeightedSums[NUM_OUTPUTS]; //weighted sums for the output nodes
-	float probabilities[NUM_OUTPUTS]; //activation values of the output nodes
+    u32 i;
+    f32 h, sms=0.0;
 
-	float hActivationValues[NUM_HIDDEN+1]; //activation values of the hidden nodes, including one extra for the bias
+    for (i=0; i<n; i++) {
+        h = hypothesis(wm[i], x, n);
+        sms += exp(h);
+    }
+    return sms;
+}
 
-	float sum; //for storing the loss
-	int i, h, o; //looping variables for iterations, input nodes, hidden nodes, output nodes
+static inline f32 softmax_smv(f32 *w, f32 *x, u32 n, f32 sms)
+{
+    f32 smv;
+    smv = (exp(hypothesis(w, x, n)) / sms);  ///softmax value
+    ///printf("softmax=%f\n", sm);
+    return smv;
+}
 
-    if (debug>=2) {
-        displayVectorOrMatrix ("input/hidden weights(Wxh)", (float*)Wxh, NUM_INPUTS+1, NUM_HIDDEN);
-        displayVectorOrMatrix ("hidden/output weights(Why)", (float*)Why, NUM_HIDDEN+1, NUM_OUTPUTS);
+static void softmax_out(u32 n, f32 (*wm)[MATC], f32 *x)
+{
+    u32 i, imax=0;
+    f32 sms, smv, smax=0.0;
+    sms = softmax_sum(n, wm, x);
+    printf("Answer Softmax [ ");
+    for (i=0; i < n; i++) {
+        smv = softmax_smv(wm[i], x, n, sms);
+        printf("%f, ", smv);
+        if (smv > smax) {
+            smax = smv;
+            imax = i;
+        }
+    }
+    printf("]\n");
+    printf("Answer Argmax [%d]\n", imax);
+}
+
+static inline f32 cost(f32 *w, f32 *x, u32 n, f32 y, f32 sms)
+{
+    f32 c;
+
+    ///base-e logarithm
+    ///c = (-y * log(softmax_smv(w,x,n,sms)) - (1-y) * log(1 - softmax_smv(w,x,n,sms)));
+    ///c = (y==0) ? -log(1 - softmax_smv(w,x,n,sms)) : -log(softmax_smv(w,x,n,sms));
+    c = (-y * log(softmax_smv(w,x,n,sms)));
+    return c;
+}
+
+static f32 descent_error(u32 i, f32 *w, f32 *x, f32 *y, u32 n, f32 alpha, f32 sms)
+{
+    f32 py, err;
+
+    py = softmax_smv(w,x,n,sms);
+    err = py - y[i];
+
+    return err;
+}
+
+static f32 mult_descent_mv(f32 (*wm)[MATC], f32 (*xm)[MATC], f32 (*yd)[MATC], u32 n, u32 m, f32 alpha)
+{
+    u32 j, k, l;
+    f32 sms, c = 0.0;
+
+    k = n * n * sizeof(f32);
+    f32 *d = alloca(k);
+    f32 *dp = d;
+    memset(d, 0.0, k);
+
+    for (j=0; j < m; j++) {     ///data number
+        sms = softmax_sum(n, wm, xm[j]);
+
+        for(l=0; l < n; l++) {
+            for (k=0; k < n; k++) {
+                *dp += descent_error(k, wm[l], xm[j], yd[j], n, alpha, sms);
+                dp++;
+            }
+        }
+        dp = d;
     }
 
-    ///Forward propagation ------------------------------------------------
-    //Start the forward pass by calculating the weighted sums and activation values for the hidden layer
-    memset (zhWeightedSums, 0, sizeof (zhWeightedSums)); //set all the weighted sums to zero
-    for (h=0; h<NUM_HIDDEN; h++)
-        for (i=0; i<NUM_INPUTS+1; i++)
-            zhWeightedSums[h] += x[i] * Wxh[i][h]; //multiply and sum inputs * weights
+    ///descent
+    for(l=0; l < n; l++) {
+        for (k=0; k < n; k++) {
+            wm[l][k] = wm[l][k] - alpha * (*dp / m);  ///average descent(w)
+            dp++;
+        }
+    }
 
-    hActivationValues[0]=1; //set the bias for the first hidden node to 1
-    for (h=0; h<NUM_HIDDEN; h++)
-        hActivationValues[h+1] = tanh (zhWeightedSums[h]); //apply activation function on other hidden nodes
-
-    memset (zyWeightedSums, 0, sizeof (zyWeightedSums)); //set all the weighted sums to zero
-    for (o=0; o<NUM_OUTPUTS; o++)
-        for (h=0; h<NUM_HIDDEN+1; h++)
-            zyWeightedSums[o] += hActivationValues[h] * Why[h][o]; //multiply and sum inputs * weights
-
-    for (sum=0, o=0; o<NUM_OUTPUTS; o++) {
-        probabilities[o] = exp (zyWeightedSums[o]);
-        sum += probabilities[o];
-    } //compute exp(z) for softmax
-    for (o=0; o<NUM_OUTPUTS; o++) probabilities[o] /= sum; //apply softmax by dividing by the the sum all the exps
-    if (debug>=1) displayVectorOrMatrix ("softmax probabilities", probabilities, NUM_OUTPUTS, 1);
-
-    for (o=0; o<NUM_OUTPUTS; o++)
-        y[o] = probabilities[o];
-
+    ///cost
+    for (j=0; j < m; j++) {
+        sms = softmax_sum(n, wm, xm[j]);
+        for(k=0; k < n; k++)
+            c += cost(wm[k], xm[j], n, yd[j][k], sms);
+    }
+    c /= m;    ///average cost(w)
+    return c;
 }
 
-//This is the main function in a C program.
-//Compile and run this with: gcc neuralnetwork.c -o neuralnetwork.out; ./neuralnetwork.out
-int main (int argc, char **argv)
+static void mat_output(u32 n, f32 (*mat)[MATC])
 {
-	/// Set up inputs/outputs
-	float inputs[NUM_TRAINING][NUM_INPUTS]   = {
-                {126, 255, 0}, {0, 0, 255}, {255, 7, 6}, {4, 255, 4}, {2, 1, 255}, {255, 5, 8}
-            };
-	float outputs[NUM_TRAINING][NUM_OUTPUTS] = {
-                {0, 1, 0}, {0, 0, 1}, {1, 0, 0}, {0, 1, 0}, {0, 0, 1}, {1, 0, 0}
-            };
-	///float learningrate = 0.01; //learning rate
-	float learningrate = 0.01; //learning rate
-	int iterations = 11000; //iterations
+    u32 j, k;
 
-    if (argc > 2) {
-        iterations = atoi(argv[1]);
-        debug = atoi(argv[2]);
+    printf("[\n");
+    for (j=0; j < n; j++) {
+        printf("[");
+        for (k=0; k < MATC; k++)
+            printf("%f, ", mat[j][k]);
+        printf("], \n");
     }
-	/// Initialise weights
-	float Wxh[NUM_INPUTS+1][NUM_HIDDEN]; //weights between inputs x and hidden nodes, including an extra one for bias
-	float Why[NUM_HIDDEN+1][NUM_OUTPUTS]; //weights between hidden nodes and output y, including an extra one for bias
-	int t, i, h, o; //looping variables for iterations, input nodes, hidden nodes, output nodes
+    printf("]\n");
+}
 
-	for (i=0; i<NUM_INPUTS+1; i++)
-        for (h=0; h<NUM_HIDDEN; h++)
-            Wxh[i][h] = ((float)rand() / (double)RAND_MAX) * 0.2 - 0.1;
+/**
+    Multinomial Classification multi-variables for learning
+    @xm:    x_matrix
+    @yd:    y_data
+    @w:     first weight
+    @alpha: learning rate
+    @cnt:   count for loop
+    @n:     row count for x_matrix
+    @m:     col count for y_data
+    loop:   O(cnt x m x w#)
+    return: learning weight
+*/
+void mult_learning_mv(f32 (*xm)[MATC], f32 (*yd)[MATC], f32 (*wm)[MATC], f32 alpha, u32 cnt, u32 n, u32 m)
+{
+    u32 i;
+    f32 c;
 
-	for (h=0; h<NUM_HIDDEN+1; h++)
-        for (o=0; o<NUM_OUTPUTS; o++)
-            Why[h][o] = ((float)rand() / (double)RAND_MAX) * 0.2 - 0.1;
+    printf("\n----------------------------------\n");
+    printf("Learning...\n");
 
-	/// Variables for the training
-	float x[NUM_INPUTS+1]; //input vector including one extra for bias
-	float y[NUM_OUTPUTS]; //output vector
+    mat_output(n, wm);
 
-	/// Train the network
-	for (t=0; t<iterations; t++)
-	{
-		/// Get input and output
-		/// Fill the x and y array with the input and ouput
-		if (debug>=1) printf ("Iteration %4d:\n", t+1);
-		x[0]=1;
-		memcpy (&x[1], inputs[t % NUM_TRAINING], sizeof (inputs[0])); //copy the input into x with the bias=1
-		if (debug>=2) displayVectorOrMatrix ("inputs", x, NUM_INPUTS+1, 1);
-		memcpy (y, outputs[t % NUM_TRAINING], sizeof (outputs[0])); //copy the output into y
-		if (debug>=2) displayVectorOrMatrix ("outputs", y, NUM_OUTPUTS, 1);
+    for (i=1; i <= cnt; i++){
+        c = mult_descent_mv(wm, xm, yd, n, m, alpha);
+        printf("%d: cost=%f:\n", i, c);
+        mat_output(n, wm);
+    }
+}
 
-		nn_learning(x, y, Wxh, Why, learningrate);
-	}
+void mult_test(f32 (*wm)[MATC], f32 alpha, u32 cnt)
+{
+    ///Transpose
+    f32 x_mat_t[][MATC] = {
+        {1.0, 2.0, 1.0}, {1.0, 3.0, 2.0}, {1.0, 3.0, 4.0},
+        {1.0, 5.0, 5.0}, {1.0, 7.0, 5.0}, {1.0, 2.0, 5.0},
+        {1.0, 6.0, 6.0}, {1.0, 7.0, 7.0}
+    };
+    f32 y_data[][MATC] = {
+        {0.0, 0.0, 1.0}, {0.0, 0.0, 1.0}, {0.0, 0.0, 1.0},
+        {0.0, 1.0, 0.0}, {0.0, 1.0, 0.0}, {0.0, 1.0, 0.0},
+        {1.0, 0.0, 0.0}, {1.0, 0.0, 0.0}
+    };
+    u32 n, m;
 
-	printf ("------------------------------- Results --------------------------------\n");
-	///Output weights and last input/output and predicted output
-	displayVectorOrMatrix ("input/hidden weights(Wxh)", (float*)Wxh, NUM_INPUTS+1, NUM_HIDDEN);
-	displayVectorOrMatrix ("hidden/output weights(Why)", (float*)Why, NUM_HIDDEN+1, NUM_OUTPUTS);
+    n = ARRAY_CNT(x_mat_t[0]);  ///column
+    m = ARRAY_CNT(y_data);      ///data num
+    mult_learning_mv(x_mat_t, y_data, wm, alpha, cnt, n, m);
+}
 
-	displayVectorOrMatrix ("last input", &x[1], NUM_INPUTS, 1);
-	displayVectorOrMatrix ("last output", y, NUM_OUTPUTS, 1);
+void mult_answer(f32 (*wm)[MATC], f32 *x, u32 n)
+{
+    printf("----------------------------------\n");
+    printf("Answer for x[ %f, %f, %f ]\n", x[0], x[1], x[2]);
+    softmax_out(n, wm, x);
+}
 
+int main(void)
+{
+    f32 w[][MATC] = {
+        {-2.0, 0.0, 0.1}, {0.0, 0.2, 0.0}, {0.4, 0.0, -2.0} };  ///init important!
+    u32 cnt;
 
-	printf ("------------------------------- Answer --------------------------------\n");
-	///displayVectorOrMatrix ("predicted output", probabilities, NUM_OUTPUTS, 1);
-	nn_answer(x, y, Wxh, Why);
-    x[0] = 1;
-    x[1] = 5;
-    x[2] = 5;
-    x[3] = 5;
-    displayVectorOrMatrix ("x input", &x[1], NUM_INPUTS, 1);
-    nn_answer(x, y, Wxh, Why);
-    displayVectorOrMatrix ("y answer", y, NUM_OUTPUTS, 1);
+    ///learning  loop count
+    cnt = 500;
+    mult_test(w, LEARNING_RATE, cnt);
 
-	return 0;
+    f32 x1[MATC] = {1.0, 2.0, 2.0};
+    mult_answer(w, x1, MATC);
+
+    f32 x2[MATC] = {1.0, 7.0, 7.0};
+    mult_answer(w, x2, MATC);
+
+    f32 x3[MATC] = {1.0, 8.0, 9.0};
+    mult_answer(w, x3, MATC);
+
+    return 0;
 }

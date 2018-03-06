@@ -31,6 +31,67 @@
 		<Compiler>
 			<Add option="-Wall" />
 		</Compiler>
+		<Unit filename="../../CML/Classification/logistic.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../CML/Classification/logistic_result.txt" />
+		<Unit filename="../../CML/Classification/multinomial.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../CML/Face/ada_boost/boost.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../CML/Face/ada_boost/data.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../CML/Face/ada_boost/dectree.png" />
+		<Unit filename="../../CML/Face/ada_boost/header.h" />
+		<Unit filename="../../CML/Face/ada_boost/makefile" />
+		<Unit filename="../../CML/Face/ada_boost/paper.tex" />
+		<Unit filename="../../CML/Face/ada_boost/paraboost.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../CML/Face/ada_boost/partition.png" />
+		<Unit filename="../../CML/Face/ada_boost/sort.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../CML/Face/ada_boost/t10k-images-idx3-ubyte" />
+		<Unit filename="../../CML/Face/ada_boost/t10k-labels-idx1-ubyte" />
+		<Unit filename="../../CML/Face/ada_boost/train-images-idx3-ubyte" />
+		<Unit filename="../../CML/Face/ada_boost/train-labels-idx1-ubyte" />
+		<Unit filename="../../CML/Face/ada_boost/tree.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../CML/Face/ada_boost/util.h" />
+		<Unit filename="../../CML/Face/haar.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../CML/Face/viola_jones/Face.pgm" />
+		<Unit filename="../../CML/Face/viola_jones/LICENSE" />
+		<Unit filename="../../CML/Face/viola_jones/Makefile" />
+		<Unit filename="../../CML/Face/viola_jones/class.txt" />
+		<Unit filename="../../CML/Face/viola_jones/class_a.txt" />
+		<Unit filename="../../CML/Face/viola_jones/haar.cpp" />
+		<Unit filename="../../CML/Face/viola_jones/haar.h" />
+		<Unit filename="../../CML/Face/viola_jones/image.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../CML/Face/viola_jones/image.h" />
+		<Unit filename="../../CML/Face/viola_jones/info.txt" />
+		<Unit filename="../../CML/Face/viola_jones/main.cpp" />
+		<Unit filename="../../CML/Face/viola_jones/rectangles.cpp" />
+		<Unit filename="../../CML/Face/viola_jones/stdio-wrapper.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../CML/Face/viola_jones/stdio-wrapper.h" />
+		<Unit filename="../../CML/Linear/cost_function.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../CML/Linear/cost_function_result.txt" />
+		<Unit filename="../../CML/Linear/cost_min_test.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../CML/Linear/cost_min_test_result.txt" />
 		<Unit filename="../../CML/Linear/cost_minimize.c">
 			<Option compilerVar="CC" />
 		</Unit>
@@ -43,16 +104,31 @@
 		<Unit filename="../../CML/Linear/linear2_mat.c">
 			<Option compilerVar="CC" />
 		</Unit>
+		<Unit filename="../../CML/Linear/linear2_test.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../CML/Linear/linear2_test_result.txt" />
 		<Unit filename="../../CML/Linear/linear_mat.c">
 			<Option compilerVar="CC" />
 		</Unit>
+		<Unit filename="../../CML/Linear/linear_mat_result.txt" />
 		<Unit filename="../../CML/Linear/linear_mv.c">
 			<Option compilerVar="CC" />
 		</Unit>
+		<Unit filename="../../CML/Linear/linear_mv_result.txt" />
+		<Unit filename="../../CML/Linear/linear_test.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../CML/Linear/linear_test_result.txt" />
+		<Unit filename="../../CML/NN/nn_example_01.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../CML/NN/nn_test01" />
 		<Unit filename="../../CML/NN/nn_test01.c">
 			<Option compilerVar="CC" />
 		</Unit>
 		<Unit filename="../../CML/NN/nn_test01.result" />
+		<Unit filename="../../CML/NN/nn_test02" />
 		<Unit filename="../../CML/NN/nn_test02.c">
 			<Option compilerVar="CC" />
 		</Unit>
@@ -60,184 +136,20 @@
 		<Unit filename="../../CML/NN/nn_test03.c">
 			<Option compilerVar="CC" />
 		</Unit>
-		<Unit filename="../../CML/darknet/LICENSE" />
-		<Unit filename="../../CML/darknet/Makefile" />
-		<Unit filename="../../CML/darknet/README.md" />
-		<Unit filename="../../CML/darknet/cfg/alexnet.cfg" />
-		<Unit filename="../../CML/darknet/cfg/cifar.cfg" />
-		<Unit filename="../../CML/darknet/cfg/cifar.test.cfg" />
-		<Unit filename="../../CML/darknet/cfg/darknet.cfg" />
-		<Unit filename="../../CML/darknet/cfg/extraction.cfg" />
-		<Unit filename="../../CML/darknet/cfg/extraction.conv.cfg" />
-		<Unit filename="../../CML/darknet/cfg/go.test.cfg" />
-		<Unit filename="../../CML/darknet/cfg/jnet-conv.cfg" />
-		<Unit filename="../../CML/darknet/cfg/msr_152.cfg" />
-		<Unit filename="../../CML/darknet/cfg/msr_34.cfg" />
-		<Unit filename="../../CML/darknet/cfg/msr_50.cfg" />
-		<Unit filename="../../CML/darknet/cfg/rnn.cfg" />
-		<Unit filename="../../CML/darknet/cfg/rnn.train.cfg" />
-		<Unit filename="../../CML/darknet/cfg/strided.cfg" />
-		<Unit filename="../../CML/darknet/cfg/vgg-16.cfg" />
-		<Unit filename="../../CML/darknet/cfg/vgg-conv.cfg" />
-		<Unit filename="../../CML/darknet/cfg/writing.cfg" />
-		<Unit filename="../../CML/darknet/cfg/yolo-coco.cfg" />
-		<Unit filename="../../CML/darknet/cfg/yolo-small.cfg" />
-		<Unit filename="../../CML/darknet/cfg/yolo-tiny.cfg" />
-		<Unit filename="../../CML/darknet/cfg/yolo.cfg" />
-		<Unit filename="../../CML/darknet/data/dog.jpg" />
-		<Unit filename="../../CML/darknet/data/eagle.jpg" />
-		<Unit filename="../../CML/darknet/data/horses.jpg" />
-		<Unit filename="../../CML/darknet/data/inet.labels.list" />
-		<Unit filename="../../CML/darknet/data/labels/aeroplane.png" />
-		<Unit filename="../../CML/darknet/data/labels/airplane.png" />
-		<Unit filename="../../CML/darknet/data/labels/apple.png" />
-		<Unit filename="../../CML/darknet/data/labels/backpack.png" />
-		<Unit filename="../../CML/darknet/data/labels/banana.png" />
-		<Unit filename="../../CML/darknet/data/labels/baseball bat.png" />
-		<Unit filename="../../CML/darknet/data/labels/baseball glove.png" />
-		<Unit filename="../../CML/darknet/data/labels/bear.png" />
-		<Unit filename="../../CML/darknet/data/labels/bed.png" />
-		<Unit filename="../../CML/darknet/data/labels/bench.png" />
-		<Unit filename="../../CML/darknet/data/labels/bicycle.png" />
-		<Unit filename="../../CML/darknet/data/labels/bird.png" />
-		<Unit filename="../../CML/darknet/data/labels/boat.png" />
-		<Unit filename="../../CML/darknet/data/labels/book.png" />
-		<Unit filename="../../CML/darknet/data/labels/bottle.png" />
-		<Unit filename="../../CML/darknet/data/labels/bowl.png" />
-		<Unit filename="../../CML/darknet/data/labels/broccoli.png" />
-		<Unit filename="../../CML/darknet/data/labels/bus.png" />
-		<Unit filename="../../CML/darknet/data/labels/cake.png" />
-		<Unit filename="../../CML/darknet/data/labels/car.png" />
-		<Unit filename="../../CML/darknet/data/labels/carrot.png" />
-		<Unit filename="../../CML/darknet/data/labels/cat.png" />
-		<Unit filename="../../CML/darknet/data/labels/cell phone.png" />
-		<Unit filename="../../CML/darknet/data/labels/chair.png" />
-		<Unit filename="../../CML/darknet/data/labels/clock.png" />
-		<Unit filename="../../CML/darknet/data/labels/couch.png" />
-		<Unit filename="../../CML/darknet/data/labels/cow.png" />
-		<Unit filename="../../CML/darknet/data/labels/cup.png" />
-		<Unit filename="../../CML/darknet/data/labels/dining table.png" />
-		<Unit filename="../../CML/darknet/data/labels/diningtable.png" />
-		<Unit filename="../../CML/darknet/data/labels/dog.png" />
-		<Unit filename="../../CML/darknet/data/labels/donut.png" />
-		<Unit filename="../../CML/darknet/data/labels/elephant.png" />
-		<Unit filename="../../CML/darknet/data/labels/fire hydrant.png" />
-		<Unit filename="../../CML/darknet/data/labels/fork.png" />
-		<Unit filename="../../CML/darknet/data/labels/frisbee.png" />
-		<Unit filename="../../CML/darknet/data/labels/giraffe.png" />
-		<Unit filename="../../CML/darknet/data/labels/hair drier.png" />
-		<Unit filename="../../CML/darknet/data/labels/handbag.png" />
-		<Unit filename="../../CML/darknet/data/labels/horse.png" />
-		<Unit filename="../../CML/darknet/data/labels/hot dog.png" />
-		<Unit filename="../../CML/darknet/data/labels/keyboard.png" />
-		<Unit filename="../../CML/darknet/data/labels/kite.png" />
-		<Unit filename="../../CML/darknet/data/labels/knife.png" />
-		<Unit filename="../../CML/darknet/data/labels/laptop.png" />
-		<Unit filename="../../CML/darknet/data/labels/make_labels.py" />
-		<Unit filename="../../CML/darknet/data/labels/microwave.png" />
-		<Unit filename="../../CML/darknet/data/labels/motorbike.png" />
-		<Unit filename="../../CML/darknet/data/labels/motorcycle.png" />
-		<Unit filename="../../CML/darknet/data/labels/mouse.png" />
-		<Unit filename="../../CML/darknet/data/labels/orange.png" />
-		<Unit filename="../../CML/darknet/data/labels/oven.png" />
-		<Unit filename="../../CML/darknet/data/labels/parking meter.png" />
-		<Unit filename="../../CML/darknet/data/labels/person.png" />
-		<Unit filename="../../CML/darknet/data/labels/pizza.png" />
-		<Unit filename="../../CML/darknet/data/labels/potted plant.png" />
-		<Unit filename="../../CML/darknet/data/labels/pottedplant.png" />
-		<Unit filename="../../CML/darknet/data/labels/refrigerator.png" />
-		<Unit filename="../../CML/darknet/data/labels/remote.png" />
-		<Unit filename="../../CML/darknet/data/labels/sandwich.png" />
-		<Unit filename="../../CML/darknet/data/labels/scissors.png" />
-		<Unit filename="../../CML/darknet/data/labels/sheep.png" />
-		<Unit filename="../../CML/darknet/data/labels/sink.png" />
-		<Unit filename="../../CML/darknet/data/labels/skateboard.png" />
-		<Unit filename="../../CML/darknet/data/labels/skis.png" />
-		<Unit filename="../../CML/darknet/data/labels/snowboard.png" />
-		<Unit filename="../../CML/darknet/data/labels/sofa.png" />
-		<Unit filename="../../CML/darknet/data/labels/spoon.png" />
-		<Unit filename="../../CML/darknet/data/labels/sports ball.png" />
-		<Unit filename="../../CML/darknet/data/labels/stop sign.png" />
-		<Unit filename="../../CML/darknet/data/labels/suitcase.png" />
-		<Unit filename="../../CML/darknet/data/labels/surfboard.png" />
-		<Unit filename="../../CML/darknet/data/labels/teddy bear.png" />
-		<Unit filename="../../CML/darknet/data/labels/tennis racket.png" />
-		<Unit filename="../../CML/darknet/data/labels/tie.png" />
-		<Unit filename="../../CML/darknet/data/labels/toaster.png" />
-		<Unit filename="../../CML/darknet/data/labels/toilet.png" />
-		<Unit filename="../../CML/darknet/data/labels/toothbrush.png" />
-		<Unit filename="../../CML/darknet/data/labels/traffic light.png" />
-		<Unit filename="../../CML/darknet/data/labels/train.png" />
-		<Unit filename="../../CML/darknet/data/labels/truck.png" />
-		<Unit filename="../../CML/darknet/data/labels/tv.png" />
-		<Unit filename="../../CML/darknet/data/labels/tvmonitor.png" />
-		<Unit filename="../../CML/darknet/data/labels/umbrella.png" />
-		<Unit filename="../../CML/darknet/data/labels/vase.png" />
-		<Unit filename="../../CML/darknet/data/labels/wine glass.png" />
-		<Unit filename="../../CML/darknet/data/labels/zebra.png" />
-		<Unit filename="../../CML/darknet/data/person.jpg" />
-		<Unit filename="../../CML/darknet/data/scream.jpg" />
-		<Unit filename="../../CML/darknet/data/shortnames.txt" />
-		<Unit filename="../../CML/darknet/scripts/dice_label.sh" />
-		<Unit filename="../../CML/darknet/scripts/imagenet_label.sh" />
-		<Unit filename="../../CML/darknet/scripts/voc_label.py" />
-		<Unit filename="../../CML/darknet/src/activation_kernels.cu" />
-		<Unit filename="../../CML/darknet/src/activation_layer.h" />
-		<Unit filename="../../CML/darknet/src/activations.h" />
-		<Unit filename="../../CML/darknet/src/avgpool_layer.h" />
-		<Unit filename="../../CML/darknet/src/avgpool_layer_kernels.cu" />
-		<Unit filename="../../CML/darknet/src/blas.h" />
-		<Unit filename="../../CML/darknet/src/blas_kernels.cu" />
-		<Unit filename="../../CML/darknet/src/box.h" />
-		<Unit filename="../../CML/darknet/src/col2im.h" />
-		<Unit filename="../../CML/darknet/src/col2im_kernels.cu" />
-		<Unit filename="../../CML/darknet/src/connected_layer.h" />
-		<Unit filename="../../CML/darknet/src/convolutional_kernels.cu" />
-		<Unit filename="../../CML/darknet/src/convolutional_layer.h" />
-		<Unit filename="../../CML/darknet/src/cost_layer.h" />
-		<Unit filename="../../CML/darknet/src/crnn_layer.h" />
-		<Unit filename="../../CML/darknet/src/crop_layer.h" />
-		<Unit filename="../../CML/darknet/src/crop_layer_kernels.cu" />
-		<Unit filename="../../CML/darknet/src/cuda.h" />
-		<Unit filename="../../CML/darknet/src/data.h" />
-		<Unit filename="../../CML/darknet/src/deconvolutional_kernels.cu" />
-		<Unit filename="../../CML/darknet/src/deconvolutional_layer.h" />
-		<Unit filename="../../CML/darknet/src/detection_layer.h" />
-		<Unit filename="../../CML/darknet/src/dropout_layer.h" />
-		<Unit filename="../../CML/darknet/src/dropout_layer_kernels.cu" />
-		<Unit filename="../../CML/darknet/src/gemm.h" />
-		<Unit filename="../../CML/darknet/src/im2col.h" />
-		<Unit filename="../../CML/darknet/src/im2col_kernels.cu" />
-		<Unit filename="../../CML/darknet/src/image.h" />
-		<Unit filename="../../CML/darknet/src/layer.h" />
-		<Unit filename="../../CML/darknet/src/list.h" />
-		<Unit filename="../../CML/darknet/src/local_layer.h" />
-		<Unit filename="../../CML/darknet/src/matrix.h" />
-		<Unit filename="../../CML/darknet/src/maxpool_layer.h" />
-		<Unit filename="../../CML/darknet/src/maxpool_layer_kernels.cu" />
-		<Unit filename="../../CML/darknet/src/network.h" />
-		<Unit filename="../../CML/darknet/src/network_kernels.cu" />
-		<Unit filename="../../CML/darknet/src/normalization_layer.h" />
-		<Unit filename="../../CML/darknet/src/option_list.h" />
-		<Unit filename="../../CML/darknet/src/parser.h" />
-		<Unit filename="../../CML/darknet/src/rnn_layer.h" />
-		<Unit filename="../../CML/darknet/src/route_layer.h" />
-		<Unit filename="../../CML/darknet/src/server.h" />
-		<Unit filename="../../CML/darknet/src/shortcut_layer.h" />
-		<Unit filename="../../CML/darknet/src/softmax_layer.h" />
-		<Unit filename="../../CML/darknet/src/softmax_layer_kernels.cu" />
-		<Unit filename="../../CML/darknet/src/stb_image.h" />
-		<Unit filename="../../CML/darknet/src/stb_image_write.h" />
-		<Unit filename="../../CML/darknet/src/utils.h" />
-		<Unit filename="../../CML/darknet/src/yolo_kernels.cu" />
-		<Unit filename="../../CML/mnist/mnist.c">
-			<Option compilerVar="CC" />
-		</Unit>
+		<Unit filename="../../CML/mnist/README.md" />
+		<Unit filename="../../CML/mnist/data/t10k-images-idx3-ubyte" />
+		<Unit filename="../../CML/mnist/data/t10k-labels-idx1-ubyte" />
+		<Unit filename="../../CML/mnist/data/train-images-idx3-ubyte" />
+		<Unit filename="../../CML/mnist/data/train-labels-idx1-ubyte" />
 		<Unit filename="../../CML/mnist/read.c">
 			<Option compilerVar="CC" />
 		</Unit>
+		<Unit filename="../../CML/nn_mnist/img_mnist.h" />
+		<Unit filename="../../CML/nn_mnist/nn.h" />
+		<Unit filename="../../CML/nn_mnist/usr_types.h" />
 		<Extensions>
 			<code_completion />
+			<envvars />
 			<debugger />
 		</Extensions>
 	</Project>

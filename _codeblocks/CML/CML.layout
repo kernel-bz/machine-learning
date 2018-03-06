@@ -1,44 +1,130 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
 <CodeBlocks_layout_file>
+	<FileVersion major="1" minor="0" />
 	<ActiveTarget name="Debug" />
-	<File name="../../CML/mnist/read.c" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+	<File name="..\..\CML\NN\nn_test01.c" open="0" top="0" tabpos="1" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="4193" topLine="139" />
+			<Cursor1 position="5851" topLine="99" />
 		</Cursor>
 	</File>
-	<File name="../../CML/NN/nn_test03.c" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+	<File name="..\..\CML\NN\nn_test02.c" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="12309" topLine="218" />
+			<Cursor1 position="1220" topLine="120" />
 		</Cursor>
 	</File>
-	<File name="../../CML/NN/nn_test02.c" open="0" top="0" tabpos="2" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+	<File name="..\..\CML\mnist\read.c" open="0" top="0" tabpos="5" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="11364" topLine="194" />
+			<Cursor1 position="2941" topLine="105" />
 		</Cursor>
 	</File>
-	<File name="../../CML/NN/nn_test01.c" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+	<File name="..\..\CML\Classification\logistic.c" open="0" top="0" tabpos="3" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="0" topLine="28" />
+			<Cursor1 position="0" topLine="111" />
 		</Cursor>
 	</File>
-	<File name="../../CML/NN/nn_test02.result" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+	<File name="..\..\CML\Linear\linear2_test.c" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="532069" topLine="15958" />
+			<Cursor1 position="355" topLine="0" />
 		</Cursor>
 	</File>
-	<File name="../../CML/mnist/mnist.c" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+	<File name="..\..\CML\Linear\linear_mat_result.txt" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="2258" topLine="70" />
+			<Cursor1 position="0" topLine="1378" />
 		</Cursor>
 	</File>
-	<File name="../../CML/NN/nn_test01.result" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+	<File name="..\..\CML\Linear\linear_test_result.txt" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="528505" topLine="15987" />
+			<Cursor1 position="776" topLine="0" />
 		</Cursor>
 	</File>
-	<File name="../../CML/Linear/linear.c" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+	<File name="..\..\CML\Linear\cost_function.c" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="405" topLine="0" />
+			<Cursor1 position="390" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="..\..\CML\Face\viola_jones\haar.cpp" open="0" top="0" tabpos="3" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="334" topLine="558" />
+		</Cursor>
+	</File>
+	<File name="..\..\CML\Linear\linear_mv_result.txt" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="1165" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="..\..\CML\Face\haar.c" open="0" top="0" tabpos="4" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="2079" topLine="69" />
+		</Cursor>
+	</File>
+	<File name="..\..\CML\Linear\cost_function_result.txt" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="1206" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="..\..\CML\Classification\multinomial.c" open="1" top="1" tabpos="1" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="2750" topLine="102" />
+		</Cursor>
+	</File>
+	<File name="..\..\CML\NN\nn_example_01.c" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="6940" topLine="13" />
+		</Cursor>
+	</File>
+	<File name="..\..\CML\Linear\linear_mv.c" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="3538" topLine="98" />
+		</Cursor>
+	</File>
+	<File name="..\..\CML\Linear\cost_min_test_result.txt" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="831" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="..\..\CML\Linear\linear_test.c" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="370" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="..\..\CML\Classification\logistic_result.txt" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="605" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="..\..\CML\Linear\linear_mat.c" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="784" topLine="9" />
+		</Cursor>
+	</File>
+	<File name="..\..\CML\Linear\cost_minimize.c" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="339" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="..\..\CML\Linear\linear2_mat.c" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="2501" topLine="90" />
+		</Cursor>
+	</File>
+	<File name="..\..\CML\Linear\cost_min_test.c" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="525" topLine="3" />
+		</Cursor>
+	</File>
+	<File name="..\..\CML\Linear\linear.c" open="0" top="0" tabpos="1" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="1315" topLine="4" />
+		</Cursor>
+	</File>
+	<File name="..\..\CML\NN\nn_test03.c" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="10763" topLine="207" />
+		</Cursor>
+	</File>
+	<File name="..\..\CML\Linear\linear2.c" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="1509" topLine="16" />
 		</Cursor>
 	</File>
 </CodeBlocks_layout_file>
