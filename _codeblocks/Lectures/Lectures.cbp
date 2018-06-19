@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6" />
+	<Project>
+		<Option title="Lectures" />
+		<Option pch_mode="2" />
+		<Option compiler="gcc" />
+		<Build>
+			<Target title="Debug">
+				<Option output="bin/Debug/Lectures" prefix_auto="1" extension_auto="1" />
+				<Option object_output="obj/Debug/" />
+				<Option type="1" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add option="-g" />
+				</Compiler>
+			</Target>
+			<Target title="Release">
+				<Option output="bin/Release/Lectures" prefix_auto="1" extension_auto="1" />
+				<Option object_output="obj/Release/" />
+				<Option type="1" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add option="-O2" />
+				</Compiler>
+				<Linker>
+					<Add option="-s" />
+				</Linker>
+			</Target>
+		</Build>
+		<Compiler>
+			<Add option="-Wall" />
+		</Compiler>
+		<Unit filename="../../Lectures/.spyproject/codestyle.ini" />
+		<Unit filename="../../Lectures/.spyproject/encoding.ini" />
+		<Unit filename="../../Lectures/.spyproject/vcs.ini" />
+		<Unit filename="../../Lectures/.spyproject/workspace.ini" />
+		<Unit filename="../../Lectures/Basic/basic00.py" />
+		<Unit filename="../../Lectures/Basic/basic01.py" />
+		<Unit filename="../../Lectures/Basic/basic01.result" />
+		<Unit filename="../../Lectures/Basic/basic02.py" />
+		<Unit filename="../../Lectures/Basic/basic02.result" />
+		<Unit filename="../../Lectures/CNN/cnn_adam_opt.py" />
+		<Unit filename="../../Lectures/CNN/cnn_adam_opt.result" />
+		<Unit filename="../../Lectures/CNN/cnn_rms_opt.py" />
+		<Unit filename="../../Lectures/CNN/cnn_rms_opt.result" />
+		<Unit filename="../../Lectures/CNN/input_data.py" />
+		<Unit filename="../../Lectures/CNN/input_data.pyc" />
+		<Unit filename="../../Lectures/Linear/linear.py" />
+		<Unit filename="../../Lectures/Linear/linear_0.5_w.py" />
+		<Unit filename="../../Lectures/Linear/linear_0.5_w.result" />
+		<Unit filename="../../Lectures/Linear/linear_1_w.py" />
+		<Unit filename="../../Lectures/Linear/linear_1_w.result" />
+		<Unit filename="../../Lectures/Linear/linear_2_w.py" />
+		<Unit filename="../../Lectures/Linear/linear_2_w.result" />
+		<Unit filename="../../Lectures/Linear/linear_ml_1.py" />
+		<Unit filename="../../Lectures/Linear/linear_ml_1.result" />
+		<Unit filename="../../Lectures/Linear/linear_ml_1b.py" />
+		<Unit filename="../../Lectures/Linear/linear_ml_1b.result" />
+		<Unit filename="../../Lectures/Linear/linear_ml_2.py" />
+		<Unit filename="../../Lectures/Linear/linear_ml_2.result" />
+		<Unit filename="../../Lectures/Linear/linear_ml_file.py" />
+		<Unit filename="../../Lectures/Linear/linear_ml_file.result" />
+		<Unit filename="../../Lectures/Linear/linear_ml_mat.py" />
+		<Unit filename="../../Lectures/Linear/linear_ml_mat.result" />
+		<Unit filename="../../Lectures/Linear/linear_ml_mat_.py" />
+		<Unit filename="../../Lectures/Linear/linear_ml_mat_.result" />
+		<Unit filename="../../Lectures/Linear/linear_ml_mv.py" />
+		<Unit filename="../../Lectures/Linear/linear_ml_mv.result" />
+		<Unit filename="../../Lectures/Linear/train.txt" />
+		<Unit filename="../../Lectures/LogClass/log_class.py" />
+		<Unit filename="../../Lectures/LogClass/log_class.result" />
+		<Unit filename="../../Lectures/LogClass/train.txt" />
+		<Unit filename="../../Lectures/MultiClass/multi_class.py" />
+		<Unit filename="../../Lectures/MultiClass/multi_class.result" />
+		<Unit filename="../../Lectures/MultiClass/train.txt" />
+		<Unit filename="../../Lectures/NN/alexnet.py" />
+		<Unit filename="../../Lectures/NN/alexnet.result" />
+		<Unit filename="../../Lectures/NN/bidirectional.result" />
+		<Unit filename="../../Lectures/NN/bidirectional_rnn.py" />
+		<Unit filename="../../Lectures/NN/convolutional.result" />
+		<Unit filename="../../Lectures/NN/convolutional_network.py" />
+		<Unit filename="../../Lectures/NN/data/t10k-images-idx3-ubyte" />
+		<Unit filename="../../Lectures/NN/data/t10k-labels-idx1-ubyte" />
+		<Unit filename="../../Lectures/NN/data/train-images-idx3-ubyte" />
+		<Unit filename="../../Lectures/NN/data/train-labels-idx1-ubyte" />
+		<Unit filename="../../Lectures/NN/input_data.py" />
+		<Unit filename="../../Lectures/NN/input_data.pyc" />
+		<Unit filename="../../Lectures/NN/logistic_regression.py" />
+		<Unit filename="../../Lectures/NN/mnist_logistic.py" />
+		<Unit filename="../../Lectures/NN/mnist_logistic.result" />
+		<Unit filename="../../Lectures/NN/mnist_nn_deep_dropout.py" />
+		<Unit filename="../../Lectures/NN/mnist_nn_deep_dropout.result" />
+		<Unit filename="../../Lectures/NN/mnist_nn_init.py" />
+		<Unit filename="../../Lectures/NN/mnist_nn_init.result" />
+		<Unit filename="../../Lectures/NN/mnist_nn_relu.py" />
+		<Unit filename="../../Lectures/NN/mnist_nn_relu.result" />
+		<Unit filename="../../Lectures/NN/multilayer.result" />
+		<Unit filename="../../Lectures/NN/multilayer_perceptron.py" />
+		<Unit filename="../../Lectures/NN/nearest.result" />
+		<Unit filename="../../Lectures/NN/nearest_neighbor.py" />
+		<Unit filename="../../Lectures/NN/recurrent.result" />
+		<Unit filename="../../Lectures/NN/recurrent_network.py" />
+		<Unit filename="../../Lectures/Plots/linear.nb" />
+		<Unit filename="../../Lectures/Plots/linear.pdf" />
+		<Unit filename="../../Lectures/Plots/logistics.nb" />
+		<Unit filename="../../Lectures/Plots/logistics.pdf" />
+		<Unit filename="../../Lectures/XOR/xor.py" />
+		<Unit filename="../../Lectures/XOR/xor.result" />
+		<Unit filename="../../Lectures/XOR/xor_nn.py" />
+		<Unit filename="../../Lectures/XOR/xor_nn.result" />
+		<Unit filename="../../Lectures/XOR/xor_nn_deep.py" />
+		<Unit filename="../../Lectures/XOR/xor_nn_deep.result" />
+		<Unit filename="../../Lectures/XOR/xor_nn_deep2.py" />
+		<Unit filename="../../Lectures/XOR/xor_nn_deep2.result" />
+		<Unit filename="../../Lectures/XOR/xor_nn_relu.py" />
+		<Unit filename="../../Lectures/XOR/xor_nn_relu.result" />
+		<Unit filename="../../Lectures/XOR/xor_train.txt" />
+		<Extensions>
+			<code_completion />
+			<envvars />
+			<debugger />
+		</Extensions>
+	</Project>
+</CodeBlocks_project_file>
